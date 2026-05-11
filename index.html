@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LaunchStore | Your Business, Online.</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #ffffff;
+        color: #111827;
+        line-height: 1.6;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      img {
+        width: 100%;
+        display: block;
+        border-radius: 16px;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        background: #f97316;
+        color: white;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+
+      /* NAVBAR */
+
+      nav {
+        width: 100%;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 18px 0;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 700;
+      }
+
+      .logo span {
+        color: #f97316;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-weight: 500;
+        transition: 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #f97316;
+      }
+
+      /* HERO */
+
+      .hero {
+        background: #f8fafc;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 64px;
+        line-height: 1.1;
+        margin-bottom: 24px;
+        color: #0f172a;
+      }
+
+      .hero h1 span {
+        color: #f97316;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 32px;
+        color: #475569;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-bottom: 35px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+
+      .hero-image img {
+        border-radius: 24px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      /* SECTION TITLES */
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-size: 42px;
+        margin-bottom: 12px;
+        color: #0f172a;
+      }
+
+      .section-title p {
+        color: #64748b;
+      }
+
+      /* PROBLEM SOLUTION */
+
+      .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+
+      .card {
+        background: white;
+        padding: 35px;
+        border-radius: 20px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .card h3 {
+        margin-bottom: 18px;
+        font-size: 28px;
+      }
+
+      .card ul {
+        margin-top: 20px;
+        padding-left: 20px;
+      }
+
+      .card li {
+        margin-bottom: 10px;
+        color: #475569;
+      }
+
+      /* SERVICES */
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .service-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        padding: 35px;
+        border-radius: 18px;
+        transition: 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      .service-card h3 {
+        margin: 18px 0;
+        font-size: 22px;
+      }
+
+      .service-card p {
+        color: #64748b;
+      }
+
+      .icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        background: #eff6ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 28px;
+      }
+
+      /* WHY US */
+
+      .why-us {
+        background: #f8fafc;
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .why-list {
+        margin-top: 30px;
+      }
+
+      .why-list li {
+        margin-bottom: 15px;
+        list-style: none;
+        font-size: 17px;
+      }
+
+      /* PROJECTS */
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .project-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 18px;
+        overflow: hidden;
+        background: white;
+      }
+
+      .project-content {
+        padding: 22px;
+      }
+
+      .project-content h3 {
+        margin-bottom: 10px;
+      }
+
+      .project-content p {
+        color: #64748b;
+      }
+
+      /* TESTIMONIALS */
+
+      .testimonials {
+        background: #f8fafc;
+      }
+
+      .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+      }
+
+      .testimonial-card {
+        background: white;
+        padding: 30px;
+        border-radius: 18px;
+        border: 1px solid #e5e7eb;
+      }
+
+      .testimonial-card p {
+        margin-bottom: 20px;
+        color: #475569;
+      }
+
+      .testimonial-user {
+        font-weight: 600;
+      }
+
+      /* CTA */
+
+      .cta {
+        background: #1e3a8a;
+        color: white;
+        text-align: center;
+        border-radius: 24px;
+        margin: 80px auto;
+        width: 90%;
+        max-width: 1200px;
+      }
+
+      .cta h2 {
+        font-size: 42px;
+        margin-bottom: 18px;
+      }
+
+      .cta p {
+        margin-bottom: 30px;
+        color: #dbeafe;
+      }
+
+      /* FOOTER */
+
+      footer {
+        background: #0f172a;
+        color: white;
+        padding: 70px 0 30px;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-grid h3 {
+        margin-bottom: 20px;
+      }
+
+      .footer-grid p,
+      .footer-grid li {
+        color: #cbd5e1;
+        margin-bottom: 10px;
+        list-style: none;
+      }
+
+      .copyright {
+        border-top: 1px solid #334155;
+        padding-top: 20px;
+        text-align: center;
+        color: #94a3b8;
+      }
+
+      /* RESPONSIVE */
+
+      @media (max-width: 992px) {
+        .hero-content,
+        .problem-grid,
+        .why-grid,
+        .services-grid,
+        .projects-grid,
+        .testimonial-grid,
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 48px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title h2 {
+          font-size: 34px;
+        }
+
+        .cta h2 {
+          font-size: 32px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+
+    <nav>
+      <div class="container nav-container">
+        <div class="logo">Launch<span>Store</span></div>
+
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#projects">Portfolio</a>
+          <a href="#why">Why Us</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact" class="btn">Get Consultation</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+      <div class="container hero-content">
+        <div>
+          <h1>Launch Your <span>Business Online</span></h1>
+
+          <p>
+            Affordable ecommerce websites for small and medium-sized businesses
+            in Palestine.
+          </p>
+
+          <div class="features">
+            <div class="feature-item">✅ Affordable Pricing</div>
+            <div class="feature-item">✅ Fast Delivery</div>
+            <div class="feature-item">✅ Mobile First</div>
+            <div class="feature-item">✅ Arabic & Hebrew Support</div>
+          </div>
+
+          <a href="#contact" class="btn"> Get Free Consultation </a>
+        </div>
+
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM SOLUTION -->
+
+    <section>
+      <div class="container">
+        <div class="problem-grid">
+          <div class="card">
+            <h3>❌ The Problem</h3>
+
+            <p>
+              Many local businesses rely only on Instagram or WhatsApp to sell
+              products.
+            </p>
+
+            <ul>
+              <li>Limited customer reach</li>
+              <li>Unorganized orders</li>
+              <li>Lack of professional trust</li>
+              <li>Difficult business growth</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>✅ Our Solution</h3>
+
+            <p>
+              LaunchStore creates professional ecommerce websites that improve
+              trust and increase sales.
+            </p>
+
+            <ul>
+              <li>Professional online presence</li>
+              <li>SEO optimization</li>
+              <li>Easy order management</li>
+              <li>Analytics integration</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p>Everything needed to launch and grow your ecommerce business.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="icon">🛒</div>
+            <h3>Ecommerce Development</h3>
+            <p>Professional online stores built for business growth.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">📱</div>
+            <h3>Mobile-Friendly Design</h3>
+            <p>Responsive websites optimized for all devices.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">📈</div>
+            <h3>SEO Optimization</h3>
+            <p>Improve visibility on Google and attract more customers.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">📊</div>
+            <h3>Analytics Integration</h3>
+            <p>Track visitors and measure business performance.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">🌍</div>
+            <h3>Arabic & Hebrew Support</h3>
+            <p>Reach wider audiences across the region.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon">⚙️</div>
+            <h3>Easy Management</h3>
+            <p>Simple dashboard for products and order management.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+
+    <section class="why-us" id="why">
+      <div class="container why-grid">
+        <div>
+          <div class="section-title" style="text-align: left">
+            <h2>Why Choose LaunchStore?</h2>
+          </div>
+
+          <ul class="why-list">
+            <li>✅ Affordable pricing for small businesses</li>
+            <li>✅ Fast and professional delivery</li>
+            <li>✅ Modern responsive design</li>
+            <li>✅ SEO-ready ecommerce websites</li>
+            <li>✅ Easy management tools</li>
+            <li>✅ Regional language support</li>
+          </ul>
+        </div>
+
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop"
+            alt=""
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Demo Projects</h2>
+          <p>Examples of ecommerce website concepts and designs.</p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop"
+              alt=""
+            />
+            <div class="project-content">
+              <h3>FashionHub</h3>
+              <p>Modern clothing ecommerce website with clean UI.</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop"
+              alt=""
+            />
+            <div class="project-content">
+              <h3>TechZone</h3>
+              <p>Electronics store optimized for performance.</p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop"
+              alt=""
+            />
+            <div class="project-content">
+              <h3>Glow Cosmetics</h3>
+              <p>Elegant cosmetics ecommerce website concept.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>What Businesses Say</h2>
+        </div>
+
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <p>
+              “LaunchStore helped us improve our online presence and customer
+              trust.”
+            </p>
+            <div class="testimonial-user">Maria Store</div>
+          </div>
+
+          <div class="testimonial-card">
+            <p>
+              “Professional, fast, and easy to work with. Highly recommended.”
+            </p>
+            <div class="testimonial-user">Taybeh Crafts</div>
+          </div>
+
+          <div class="testimonial-card">
+            <p>“The website helped increase our online sales significantly.”</p>
+            <div class="testimonial-user">Palestine Naturals</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <h2>Ready to Launch Your Store?</h2>
+
+        <p>Start building your professional ecommerce website today.</p>
+
+        <a href="#" class="btn"> Contact Us </a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="logo" style="margin-bottom: 20px">
+              Launch<span>Store</span>
+            </div>
+
+            <p>
+              Helping businesses in Palestine launch professional ecommerce
+              websites.
+            </p>
+          </div>
+
+          <div>
+            <h3>Quick Links</h3>
+            <ul>
+              <li>Home</li>
+              <li>Services</li>
+              <li>Portfolio</li>
+              <li>Contact</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Services</h3>
+            <ul>
+              <li>Ecommerce Development</li>
+              <li>SEO Optimization</li>
+              <li>Analytics</li>
+              <li>Store Management</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li>West Bank, Palestine</li>
+              <li>hello@launchstore.com</li>
+              <li>+970 59 123 4567</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="copyright">© 2026 LaunchStore. All Rights Reserved.</div>
+      </div>
+    </footer>
+  </body>
+</html>
