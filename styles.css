@@ -907,3 +907,77 @@ footer {
     display: none;
   }
 }
+
+/* LANGUAGE TOGGLE */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lang-toggle {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.85rem;
+  font-family: "Sora", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 50px;
+  line-height: 1;
+}
+.lang-toggle:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--orange-light);
+}
+
+/* RTL / ARABIC */
+html[dir="rtl"] body,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4 {
+  font-family: "Cairo", "Inter", sans-serif;
+}
+html[dir="rtl"] .logo-text,
+html[dir="rtl"] .testi-avatar {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+html[dir="rtl"] .lang-toggle {
+  font-family: "Inter", sans-serif;
+}
+html[dir="rtl"] .nav-cta svg,
+html[dir="rtl"] .btn-primary svg {
+  transform: scaleX(-1);
+}
+html[dir="rtl"] #home h1 {
+  font-size: 2.7rem;
+  line-height: 1.25;
+}
+html[dir="rtl"] .hero-desc {
+  max-width: 480px;
+}
+html[dir="rtl"] .section-tag {
+  letter-spacing: 0;
+}
+html[dir="rtl"] .quote-icon {
+  font-family: Georgia, serif;
+}
+html[dir="rtl"] .contact-item {
+  text-align: right;
+}
+html[dir="rtl"] .footer-brand p {
+  max-width: 280px;
+}
+html[dir="rtl"] .footer-bottom {
+  direction: rtl;
+}
+@media (max-width: 920px) {
+  html[dir="rtl"] #home h1 {
+    font-size: 2.1rem;
+  }
+}
