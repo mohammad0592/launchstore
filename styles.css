@@ -121,39 +121,47 @@ nav {
 
 /* HERO */
 #home {
-  padding: 60px 6% 0;
-  background: linear-gradient(135deg, #f8f9fc 0%, #eef2ff 100%);
+  padding: 80px 6%;
+  background: url("images/HeroSection-EN.png") center/cover no-repeat #1a1a3a;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-  min-height: 520px;
+  min-height: 540px;
   overflow: hidden;
+  color: white;
+}
+html[dir="rtl"] #home {
+  background-image: url("images/HeroSection-AR.png");
 }
 .hero-badge {
   display: inline-block;
-  background: var(--orange-light);
-  color: var(--orange);
+  background: rgba(240, 90, 34, 0.18);
+  color: #ffc7b3;
   font-size: 0.78rem;
   font-weight: 600;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
   margin-bottom: 18px;
+  backdrop-filter: blur(4px);
 }
 #home h1 {
   font-size: 2.9rem;
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 14px;
+  color: white;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
 #home h1 span {
   color: var(--orange);
 }
 .hero-desc {
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.88);
   font-size: 1rem;
-  max-width: 400px;
+  max-width: 420px;
   margin-bottom: 22px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 .hero-icons {
   display: flex;
@@ -167,7 +175,7 @@ nav {
   align-items: center;
   gap: 6px;
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
   text-align: center;
 }
@@ -891,7 +899,25 @@ footer {
     grid-template-columns: 1fr;
   }
   #home {
-    padding-top: 40px;
+    padding: 60px 6%;
+    background-position: right center;
+    position: relative;
+  }
+  #home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 58, 0.7) 0%,
+      rgba(26, 26, 58, 0.85) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+  #home > * {
+    position: relative;
+    z-index: 2;
   }
   #home h1 {
     font-size: 2.2rem;
